@@ -196,3 +196,4 @@ total3 = stop3 - start3
 test_case_dictionary["Deque Time"] = total3
 
 print(test_case_dictionary)
+
