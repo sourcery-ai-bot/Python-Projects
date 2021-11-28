@@ -1,0 +1,21 @@
+"""
+When you go out to eat, you always tip 20% of the bill amount. 
+But who’s got the time to calculate the right tip amount every time? 
+Not you that’s for sure! You’re making a program to calculate tips and save some time.
+
+Your program needs to take the bill amount as input and output the tip as a float.
+
+Sample Input
+50
+
+Sample Output
+10.0
+
+Here is the link for original project site
+https://www.sololearn.com/learning/eom-project/1157/1019
+
+"""
+
+bill = int(input())
+
+print((bill*20)/100)
