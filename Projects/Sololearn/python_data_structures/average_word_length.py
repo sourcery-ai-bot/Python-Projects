@@ -15,12 +15,8 @@ https://www.sololearn.com/learning/eom-project/1159/1102
 
 """
 
+
 text = input()
 list1 = list(text.split())
-a = 0
-for i in text:
-    if " " == i:
-        pass
-    else:
-        a += 1
+a = sum(i != " " for i in text)
 print(a/len(list1))

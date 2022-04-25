@@ -18,10 +18,7 @@ https://www.sololearn.com/learning/eom-project/1157/1022
 """
 
 def search(text,word):
-    if word in text:
-        return "Word found"
-    else:
-        return "Word not found"
+    return "Word found" if word in text else "Word not found"
 text = input()
 word = input()
 

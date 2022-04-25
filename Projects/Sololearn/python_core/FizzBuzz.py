@@ -14,12 +14,11 @@ https://www.sololearn.com/learning/eom-project/1073/612
 
 """
 
+
 n = int(input())
 
 for x in range(1, n):
-    if x%2 == 0:
-        pass
-    else:
+    if x % 2 != 0:
         if x % 3 == 0 and x % 5 == 0:
             print("SoloLearn")
         elif x % 3 == 0:

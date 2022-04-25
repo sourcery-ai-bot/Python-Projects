@@ -14,11 +14,11 @@ https://www.sololearn.com/learning/eom-project/1073/356
 
 """
 
+
 import re
 pattern = r"(^1|^8|^9)([0-9]{0,7}$)"
 str=input("")
-match = re.search(pattern,str)
-if match:
+if match := re.search(pattern, str):
     print("Valid")
 else:
     print("Invalid")

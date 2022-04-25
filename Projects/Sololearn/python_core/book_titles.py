@@ -19,21 +19,17 @@ https://www.sololearn.com/learning/eom-project/1073/353
 
 """
 
-file = open("/usercode/files/books.txt", "r")
 
-book =[]
-for i in file:
-    if "G" == i[0]:
+with open("/usercode/files/books.txt", "r") as file:
+    book =[]
+    for i in file:
+        if i[0] != "G":
+            i = i[:-1]
         book.append(i)
-    else:
-        i = i[:-1]
-        book.append(i)
+    line = []
+    for i in book:
+        i = i[0] + str(len(i))
+        line.append(i)
 
-line = []
-for i in book:
-    i = i[0] + str(len(i))
-    line.append(i)
-
-for i in line:
-    print(i)
-file.close()
+    for i in line:
+        print(i)

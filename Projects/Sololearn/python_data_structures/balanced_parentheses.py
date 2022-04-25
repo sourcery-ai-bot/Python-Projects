@@ -28,10 +28,10 @@ def balanced(expression):
         if i == "(":
             items.insert(-1,i)
         elif i == ")":
-            if items == []:
-                return False
-            else:
+            if items:
                 items.pop(0)
-            
-    return items == []
+
+            else:
+                return False
+    return not items
 print(balanced(input()))

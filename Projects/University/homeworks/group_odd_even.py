@@ -23,12 +23,10 @@ print("")
 
 # Part B
 print("----Part B---")
-test_case_dictionary = {}
-test_case_counter = 1
 partA1 = []
-for i in range(10, 1000):
+for test_case_counter, i in enumerate(range(10, 1000), start=1):
     inputlist2 = []
-    for j in range(i):
+    for _ in range(i):
         rn = random.randint(0, 100000)
         inputlist2.append(rn)
 
@@ -37,9 +35,6 @@ for i in range(10, 1000):
     stop1 = time.time()
     stop1 = stop1 - start1
     partA1.append(round(stop1, 1))
-    test_case_counter += 1
-
-test_case_dictionary["Part A1 Tests"] = partA1
-
+test_case_dictionary = {"Part A1 Tests": partA1}
 test_cases_df = pd.DataFrame(test_case_dictionary)
 print(test_cases_df.describe())

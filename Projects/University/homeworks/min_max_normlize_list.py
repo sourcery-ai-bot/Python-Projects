@@ -119,9 +119,9 @@ def Normalize(inp_list):
     normal_list = []
     min_val = MinList(inp_list)
     max_val = MaxList(inp_list)
-    for i in inp_list:
-        a = (i - min_val) / (max_val - min_val)
-        normal_list.append(round(a, 5))
+    normal_list.extend(
+        round((i - min_val) / (max_val - min_val), 5) for i in inp_list
+    )
 
     return normal_list
 
@@ -136,18 +136,14 @@ print(Normalize([5, 9, -5, 6, 1, 54, -1]))
 def MinList_ll(inp_linkedlist):
     minval = float("inf")
     for i in inp_linkedlist:
-        if minval > float(i.data):
-            minval = float(i.data)
-
+        minval = min(minval, float(i.data))
     return minval
 
 
 def MaxList_ll(inp_linkedlist):
     maxval = float("-inf")
     for i in inp_linkedlist:
-        if maxval < float(i.data):
-            maxval = float(i.data)
-
+        maxval = max(maxval, float(i.data))
     return maxval
 
 
@@ -162,8 +158,8 @@ def Normalize_ll(inp_linkedlist):
     return normal_list
 
 
-inp_list = [5, 9, -5, 6, 1, 54, -1]
 llist = LinkedList()
+inp_list = [5, 9, -5, 6, 1, 54, -1]
 first_node = Node(str(inp_list[0]))
 llist.head = first_node
 for x in range(1, len(inp_list)):
@@ -175,14 +171,11 @@ print(MinList_ll(llist))
 print(MaxList_ll(llist))
 print(Normalize_ll(llist))
 
-# Part B
-
-test_case_dict = {}
 partA1 = []
 partA2 = []
 for j in range(10, 1010):
     inputlist = []
-    for k in range(j):
+    for _ in range(j):
         rn = random.randint(-10000, 10000)
         inputlist.append(rn)
 
@@ -206,9 +199,7 @@ for j in range(10, 1010):
     stop = stop - start
     partA2.append(round(stop, 10))
 
-test_case_dict["Part A1 Tests"] = partA1
-test_case_dict["Part A2 Tests"] = partA2
-
+test_case_dict = {"Part A1 Tests": partA1, "Part A2 Tests": partA2}
 test_case_df = pd.DataFrame(test_case_dict)
 print(test_case_df.describe())
 

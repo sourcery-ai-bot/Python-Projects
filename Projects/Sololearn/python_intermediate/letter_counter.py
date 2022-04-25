@@ -14,12 +14,11 @@ https://www.sololearn.com/learning/eom-project/1158/1060
 
 """
 
+
 text = input()
 dict = {}
 for i in text:
-    if i in dict:
-        pass
-    else:
+    if i not in dict:
         a = text.count(i)
         dict[i] = a
 

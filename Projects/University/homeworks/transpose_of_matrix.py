@@ -98,7 +98,7 @@ def transpose_stack(inp_mat):
     row = len(inp_mat)
     column = len(inp_mat[0])
     temp_stack = Stack()
-    res_matrix = [[] for x in range(column)]
+    res_matrix = [[] for _ in range(column)]
     for i in range(column - 1, -1, -1):
         for j in range(row - 1, -1, -1):
             temp_stack.push(inp_mat[j][i])
@@ -126,7 +126,7 @@ def transpose_queue(inp_mat):
     row = len(inp_mat)
     column = len(inp_mat[0])
     temp_queue = Queue()
-    res_matrix = [[] for x in range(column)]
+    res_matrix = [[] for _ in range(column)]
     for i in range(column):
         for j in range(row):
             temp_queue.enqueue(inp_mat[j][i])
@@ -155,7 +155,7 @@ def transpose_deque(inp_mat):
     row = len(inp_mat)
     column = len(inp_mat[0])
     temp_deque = Deque()
-    res_matrix = [[] for x in range(column)]
+    res_matrix = [[] for _ in range(column)]
     for i in range(column):
         for j in range(row):
             temp_deque.add_front(inp_mat[j][i])
@@ -173,16 +173,11 @@ print("Deque Test Case 1", transpose_deque([[0, 1, 2], [3, 4, 5]]))
 print("Deque Test Case 2", transpose_deque([[5, 9, 7, 5], [5, 5, 7, 14], [9, 1, 5, 6]]))
 print()
 
-# Part B
-
-test_case_dictionary = {}
-
 start1 = time.time()
 transpose_stack([[0, 1, 2], [3, 4, 5]])
 stop1 = time.time()
 total1 = stop1 - start1
-test_case_dictionary["Stack Time"] = total1
-
+test_case_dictionary = {"Stack Time": total1}
 start2 = time.time()
 transpose_queue([[0, 1, 2], [3, 4, 5]])
 stop2 = time.time()

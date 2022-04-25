@@ -10,15 +10,10 @@ https://www.sololearn.com/learning/eom-project/1158/1066
 
 """
 
-file = open("/usercode/files/books.txt", "r")
 
-booklist = []
-for a in file:
-    filelist = list(a.split())
-    d = ""
-    for i in filelist:
-        d += i[0]
-    print(d)
-
-
-file.close()
+with open("/usercode/files/books.txt", "r") as file:
+    booklist = []
+    for a in file:
+        filelist = list(a.split())
+        d = "".join(i[0] for i in filelist)
+        print(d)

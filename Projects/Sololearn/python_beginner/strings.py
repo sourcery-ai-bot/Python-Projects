@@ -11,5 +11,6 @@ https://www.sololearn.com/learning/eom-project/1157/1058
 
 """
 
+
 for i in range(1,10):
-    print("{}.".format(i))
+    print(f"{i}.")

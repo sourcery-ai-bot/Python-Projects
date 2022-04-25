@@ -19,12 +19,12 @@ class Juice:
         self.capacity = capacity
 
     def __str__(self):
-        return (self.name + ' ('+str(self.capacity)+'L)')
+        return f'{self.name} ({str(self.capacity)}L)'
     
     def __add__(self, other):
-        self.name = self.name + "&" + other.name
+        self.name = f"{self.name}&{other.name}"
         self.capacity = self.capacity + other.capacity
-        return (self.name + ' ('+str(self.capacity)+'L)')
+        return f'{self.name} ({str(self.capacity)}L)'
 
 a = Juice('Orange', 1.5)
 b = Juice('Apple', 2.0)

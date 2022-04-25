@@ -35,9 +35,9 @@ class Enemy:
   def hit(self):
     self.lives -= 1
     if self.lives <= 0:
-       print(self.name + ' killed')
+      print(f'{self.name} killed')
     else:
-        print(self.name + ' has '+ str(self.lives) + ' lives')
+      print(f'{self.name} has {self.lives} lives')
 
 class Monster(Enemy):
   def __init__(self):

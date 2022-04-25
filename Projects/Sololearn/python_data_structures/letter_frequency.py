@@ -16,13 +16,10 @@ https://www.sololearn.com/learning/eom-project/1159/1098
 
 """
 
+
 word1 = input()
 letter1 = input()
-a = 0
-
-for i in word1:
-    if i in letter1:
-        a += 1
+a = sum(i in letter1 for i in word1)
 
 percent1 = (a/len(word1))*100
 percent1 = int(percent1)

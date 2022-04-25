@@ -16,13 +16,10 @@ https://www.sololearn.com/learning/eom-project/1073/358
 """
 
 def concatenate(*args):
-    text=""
-    for i in range(len(args)):
-        if i == len(args)-1:
-            text += args[i]
-        else:
-            text += args[i] + "-"
-    return text
+    return "".join(
+        args[i] if i == len(args) - 1 else f"{args[i]}-"
+        for i in range(len(args))
+    )
     
 
 print(concatenate("I", "love", "Python", "!"))

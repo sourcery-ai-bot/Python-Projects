@@ -23,12 +23,9 @@ https://www.sololearn.com/learning/eom-project/1093/111
 
 """
 
+
 n, p = [int(x) for x in input().split()]
-array1 = []
-
-for i in range(n):
-    array1.append(input().split())
-
+array1 = [input().split() for _ in range(n)]
 
 import numpy as np
 
